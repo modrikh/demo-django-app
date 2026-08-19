@@ -91,3 +91,8 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 SECURE_SSL_REDIRECT = False
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SESSION_COOKIE_HTTPONLY = True
+CSRF_COOKIE_HTTPONLY = True
+
+MIDDLEWARE.append("demoapp.security.SecurityHeadersMiddleware")
