@@ -5,6 +5,7 @@ from django.views.decorators.http import require_GET, require_POST
 from .models import TodoItem
 
 
+@require_GET
 def index(request):
     items = TodoItem.objects.all()
     return render(request, "todo/index.html", {"items": items})

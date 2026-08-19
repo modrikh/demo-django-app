@@ -12,7 +12,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip wheel setuptools \
     && pip install --no-cache-dir -r requirements.txt && rm -rf /root/.cache/pip
 
-COPY . .
+COPY manage.py demoapp/ todo/ README.md ./
 RUN chown -R appuser:appuser /app
 
 USER appuser

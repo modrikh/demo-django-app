@@ -17,7 +17,8 @@
     <p>Projet cible de la plateforme de qualification DevSecOps.</p>
     <form method="post" action="{% url 'todo:add' %}">
         {% csrf_token %}
-        <input type="text" name="title" placeholder="Nouvelle tache" required>
+        <label for="title">Nouvelle tache</label>
+        <input type="text" id="title" name="title" placeholder="Nouvelle tache" required>
         <button type="submit">Ajouter</button>
     </form>
     {% if items %}
