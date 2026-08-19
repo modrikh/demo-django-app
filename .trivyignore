@@ -1,0 +1,11 @@
+# Risques acceptes et justifies pour l'image Docker.
+# Format : une CVE/GHSA par ligne, avec commentaire de justification.
+# Optionnel : ligne 'expiry: YYYY-MM-DD' pour forcer la revue periodique.
+#
+# Les 2 HIGH ci-dessous sont des copies "vendored" internes a pip 26.x
+# (msgpack, setuptools) : non atteignables par l'application, aucun
+# correctif disponible dans pip a la date de qualification. A re-evaluer
+# a chaque release de pip (expiry ci-dessous).
+GHSA-6v7p-g79w-8964
+CVE-2025-47273
+expiry: 2026-12-31

@@ -9,9 +9,13 @@ class SecurityHeadersMiddleware:
         response = self.get_response(request)
         response["Content-Security-Policy"] = (
             "default-src 'self'; style-src 'self' 'unsafe-inline'; "
-            "script-src 'self'; img-src 'self' data:; frame-ancestors 'none'"
+            "script-src 'self'; img-src 'self' data:; "
+            "frame-ancestors 'none'; object-src 'none'; base-uri 'none'; "
+            "form-action 'self'"
         )
         response["Permissions-Policy"] = "geolocation=(), microphone=(), camera=()"
         response["X-Content-Type-Options"] = "nosniff"
         response["Referrer-Policy"] = "no-referrer"
+        response["Cross-Origin-Opener-Policy"] = "same-origin"
+        response["Cross-Origin-Embedder-Policy"] = "require-corp"
         return response
